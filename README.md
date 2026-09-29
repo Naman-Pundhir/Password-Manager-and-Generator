@@ -43,7 +43,6 @@ CLI Password Generator and Vault Terminal - A compact CLI utility written in Pyt
 git clone https://github.com/Naman-Pundhir/Password-Manager-and-Generator
 
 cd Password-Manager-and-Generator
-
 ```
 
 2. Run the Application:
@@ -75,7 +74,9 @@ python main.py
 
 * Try a very short password (e.g. Abc12) -> should return Weak.
 
-* Test a very weak password (e.g. Password1!) -> should return Insecure • Test a strong password (e.g. P@ssw0rd2026!) -> should return Strong*.
+* Test a very weak password (e.g. Password1!) -> should return Insecure
+  
+* Test a strong password (e.g. P@ssw0rd2026!) -> should return Strong*.
 
 3. Test Saving & Retrieving Credentials:
 
