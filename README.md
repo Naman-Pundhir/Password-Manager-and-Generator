@@ -1,87 +1,68 @@
-# CLI Password Generator and Vault Terminal
+# Automated Password Manager & Generator (`Automated_Password_Manager-Generator`)
 
-A Modular Command Line Application for Generating Strong Passwords, Assessing Their Strength and for Other Basic Local Storage of Credentials with Obfuscation Masking written in Python.
+An automated CLI-based security application implemented in Python for generating strong passwords, evaluating their strength against standard criteria, and securing stored login credentials.
+## Introduction
 
+Managing secure, unique passwords is a huge pain for many people. The Automated Password Manager & Generator solves this problem by providing an easy-to-use CLI-based terminal for generating strong random passwords, assessing the strength of existing passwords, and storing secure passwords in an encrypted vault.
 ## Overview
+The app offers users a variety of tools for dealing with the problem of keeping track of distinct and secure passwords for all of their different online accounts.
+Some of the key features offered by the app are: a Master Password to secure the application, password generation, password strength evaluation, and encrypted storage facility.
+To guarantee the security of the application, the user has to enter a Master Password every time they use the application. The generated passwords are also strong enough to withstand brute-force or dictionary attacks.
 
-CLI Password Generator and Vault Terminal - A compact CLI utility written in Python that gives you an all-in-one terminal-based solution to generate highly customizable secure passwords, check password strength according to standard rules, and store an encrypted local credential vault, vault.txt, with a master password panel.
+## Technologies and Tools
 
-## Features
+- Implementation language: Python 3.x
+- Libraries: `random`, `string`
+## How to Use
+### Requirements
 
-* Master Security Terminal: Helps lock down applications behind a Master Password screen.
+- Python 3+
 
-* Advanced Password Generator: Creates secure auto-generated passwords that can be customized with specific length and inclusion of (1) lowercase, (2) uppercase, (3) number and (4) special characters.
-
-* Password Strength Checker: Produces a score and classifies the password as Weak, Medium or Strong according to its length and whether variations of characters are used.
-
-* Data Obfuscation & Masking: Applies custom character masking before credentials are written to disk.
-
-* Credential vault saving: Users can save the site name, username, password (encrypted), decrypt passwords, and save information on the saved site name, username, and password.
-
-## Technologies / Tools Used
-
-* Language: Python 3.x
-
-* Standard Libraries:
-
-* random (for character picking in a non-deterministic fashion when generating passwords)
-
-* string (for character set manipulations and string checks)
-
-* Storage: Generic scripts Storage of data Outer shell "inner shell" Notes (general) Vault+ is a simple and flexible secure database with several interesting features: mVault is a simple, hierarchical, flat file; the system uses the code page, not a character shift to encrypt the files (which are plain text files).
-
-
-# Prerequisites
-
-* Python 3.14.7 installed on your system.
-
-## Running the Application
-
-1. Clone or Download the Repository:
-
-```
+### Installation
+Install the requirements by cloning the repo:
+```bash
 git clone https://github.com/Naman-Pundhir/Password-Manager-and-Generator
-
+```
+Then navigate to the cloned repo and run:
+```bash
 cd Password-Manager-and-Generator
 ```
 
-2. Run the Application:
+For instructions on running the code, see below.
 
-Execute the main.py entry point:
-
-```
+### Run
+To run the code, simply do:
+```bash
 python main.py
-
 ```
 
-3. Log In:
+Default master password: `boom boom`
+### Testing
+#### Testing the Master Password
+- Run `python main.py`.
+- In the terminal that appears, enter any password and ensure that the wrong password message shows.
+- Then try the default master password `boom boom` and ensure that the menu appears.
+#### Testing the Password Generator
 
-* Enter the master password: admin
-
-## Instructions for Testing
-
-1. Test Password Generation:
-
-* Choose option 1 in terminal menu.
-
-* Input Length, for example 16 Enable/disable characters, for example y/n.
-
-*Ensure that the output adheres to the chosen specifications.
-
-2. Test Strength Evaluation:
-
-* Select option 2.
-
-* Try a very short password (e.g. Abc12) -> should return Weak.
-
-* Test a very weak password (e.g. Password1!) -> should return Insecure
-  
-* Test a strong password (e.g. P@ssw0rd2026!) -> should return Strong*.
-
-3. Test Saving & Retrieving Credentials:
-
-* Choose option 3 and provide the following information (e.g. Site: github.com, User: dev, Pass: Secret123!).
-
-* Observe the generated "vault.txt" file to verify password masking.
-
-* Choose option 4` within the application to verify that the password is displayed unmasked when read.
+- From the master password prompt, select the 1 option to generate a password.
+- Set a length (e.g., 16), and set desired options to `y` or `n`. Ensure that the generated password meets the requirements we set.
+#### Testing the Password Strength
+- From the master password prompt, select the 2 option to check the strength of a test password.
+- Try a few passwords with different strengths, for example, 'pass' should return weak, 'Pass1234' medium, and 'P@ssw0rd_2026!' strong.
+#### Testing the Saving and Reading of Vault
+- To test the saving facility: From the master password prompt, select 3 to save a credential. Set a site name, username and password. This should save to the `vault.txt` file.
+- Check the `vault.txt` file to ensure that the password is masked correctly.
+- From the master password prompt, select 4 to view the saved credentials. This will unmask the passwords and display them clearly.
+### The Security Terminal
+The following is the menu that users see when they are prompted to enter the master password.
+```text
+=== SECURITY TERMINAL ===
+Enter Master Password to unlock: boom boom
+Access Granted!
+--- MENU ---
+1. Generate Password
+2. Check Password Strength
+3. Save Credential to Vault
+4. View Saved Credentials
+5. Exit
+```
