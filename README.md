@@ -36,12 +36,12 @@ To run the code, simply do:
 python main.py
 ```
 
-Default master password: `boom boom`
+Default master password: `admin`
 ### Testing
 #### Testing the Master Password
 - Run `python main.py`.
 - In the terminal that appears, enter any password and ensure that the wrong password message shows.
-- Then try the default master password `boom boom` and ensure that the menu appears.
+- Then try the default master password `admin` and ensure that the menu appears.
 #### Testing the Password Generator
 
 - From the master password prompt, select the 1 option to generate a password.
